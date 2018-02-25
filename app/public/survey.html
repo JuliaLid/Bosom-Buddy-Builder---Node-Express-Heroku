@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>FriendFinder</title>
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="http://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script> -->
 </head>
 <body>
     <div class="container">
@@ -26,8 +27,8 @@
                             </div>
 
                             <div class="form-group">
-                                <label class="font-weight-bold" for="image">Photo Image (Required)</label>
-                                <input type="text" class="form-control" id="image" placeholder="Provide a Link to Your Image">
+                                <label class="font-weight-bold" for="photo">Photo Image (Required)</label>
+                                <input type="text" class="form-control" id="photo" placeholder="Provide a Link to Your Image">
                             </div>
                             <hr>
 
@@ -143,7 +144,7 @@
                                      <br>
                             </div>
                             
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button id="submitButton" type="submit" class="btn btn-primary">Submit</button>
                         </form>
                      </div>
                 </div>
@@ -155,7 +156,58 @@
             <p><a href="#">API Friends List </a> | <a href="https://github.com/JuliaLid/Friend-Finder-App-Using-Node-and-Express-Servers" target="_blank" >GitHub Repo</a></p>
           </div>
         </footer>
-    
     </div> 
+    <script>
+        $("#submitButton").on("click", function(event){
+            event.preventDefault();
+
+            var friend = {
+                name:$("#name").val().trim(),
+                photo:$("#photo").val().trim(),
+                question1:$("#Question1").val(),
+                question2:$("#Question2").val(),
+                question3:$("#Question3").val(),
+                question4:$("#Question4").val(),
+                question5:$("#Question5").val(),
+                question6:$("#Question6").val(),
+                question7:$("#Question7").val(),
+                question8:$("#Question8").val(),
+                question9:$("#Question9").val(),
+                question10:$("#Question10").val(),
+            };
+
+            console.log(friend);
+
+                $.post("/api/friends", friend)
+                .then(function(data) {
+                        console.log(data);
+                    // // If a table is available... tell user they are booked.
+                    // if (data) {
+                    //    console.log("Yay! You are officially booked!");
+                    // }
+
+                    // // If a table is available... tell user they on the waiting list.
+                    // else {
+                    //     console("Sorry you are on the wait list");
+                    // }
+
+                    // Clear the form when submitting
+                    $("#name").val("");
+                    $("#imageURL").val("");
+                    $("#Question1").val("");
+                    $("#Question2").val("");
+                    $("#Question3").val("");
+                    $("#Question4").val("");
+                    $("#Question5").val("");
+                    $("#Question6").val("");
+                    $("#Question7").val("");
+                    $("#Question8").val("");
+                    $("#Question9").val("");
+                    $("#Question10").val("");
+                });
+
+                });
+                  
+    </script>
 </body>
 </html>
