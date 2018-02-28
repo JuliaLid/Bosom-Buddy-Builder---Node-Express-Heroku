@@ -57,7 +57,7 @@ module.exports = function(app){
 
             //this variable adds up all numbers in an array to produce the final number
             var totalDifference = currentScore.reduce((a, b) => a + b, 0);
-            console.log(totalDifference + "****************");
+            console.log(totalDifference);
             console.log("****************");
             //how do I update each comparison value? 
 
