@@ -11,6 +11,7 @@ module.exports = function(app){
     app.post("/api/friends", function(req, res) {
        
         var score = req.body;
+        // console.log(score);
         var number1 = parseInt(score.question1);
         var number2 = parseInt(score.question2);
         var number3 = parseInt(score.question3);
@@ -36,15 +37,67 @@ module.exports = function(app){
         var newFriend = {
             name:score.name,
             photo:score.photo,
-            scores:scoreArray
+            scores:scoreArray,
+            comparisonScore:0
+        }
+        // console.log(newFriend);
+        var score1 = newFriend.scores;
+        console.log(score1);
+        // friendsArray.push(newFriend);
+       
+        // var sumArray = [];
+
+        for (var i=0; i<friendsArray.length;i++){
+            //retrieving an array of 
+            var score2 = friendsArray[i].scores; 
+            // console.log("I'm an array score " + score2);
+            //push new aray and array iteration to a function to calculate the absolute difference in score for each question
+            var currentScore = absSubtract(score1,score2);
+            // console.log(currentScore);
+
+            //this variable adds up all numbers in an array to produce the final number
+            var totalDifference = currentScore.reduce((a, b) => a + b, 0);
+            console.log(totalDifference + "****************");
+            console.log("****************");
+            //how do I update each comparison value? 
+
+            friendsArray[i].comparisonScore = totalDifference;
+            // console.log(totalDifference);
         }
 
-        friendsArray.push(newFriend);
-        console.log(friendsArray);
+        //sort the array in ascending order 
+        friendsArray.sort(function(a, b) {
+            return a.comparisonScore - b.comparisonScore;
+        });
 
-        // res.send(newFriend);
+        //****** */
+        //Do something with a modal to isplay the name nd picture of the friend object with index 0 
+        //******** */
+        console.log(friendsArray);
+        console.log("I'm your match " + friendsArray[0].name);
+        resetComparisonScore();
+              
+
+        function resetComparisonScore(){
+            for (var j=0; j<friendsArray.length;j++){
+            friendsArray[j].comparisonScore = 0;
+            }
+        }
+
+        // console.log(friendsArray);
+          
+     
+        function absSubtract(arr1, arr2) {
+            // console.log("I was called");
+            return arr2.map(function (el, i) {
+              return Math.abs(el - arr1[i]);
+            });
+        }
+
+       
+        res.send([friendsArray[0].name,friendsArray[0].photo]);
             
-         // console.log(typeof score);
+            // console.log(typeof score);
 
         // console.log(Object.values(score));
 
@@ -53,9 +106,9 @@ module.exports = function(app){
         //     if(typeof value !== "string"){
         //         console.log("I'm working");
         //         scoreArray.push(value);
-           
+            
         //    }
-               
+                
         // });
         // console.log(scoreArray);
 
@@ -70,8 +123,9 @@ module.exports = function(app){
         // Object.keys(score).forEach(function(key) {
         //     console.log(key);
         // });
-
-    
+     
+        
+        
     });
 };
 
