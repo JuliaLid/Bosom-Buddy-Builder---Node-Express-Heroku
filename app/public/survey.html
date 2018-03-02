@@ -10,33 +10,38 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.2/css/bootstrap-select.min.css" />
     <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.2/js/bootstrap-select.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
+ 
 </head>
 <body>
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
                 <div class="card">
-                    <div class="display-4 text-center card-header">
+                    <div id ="survey_header" class="display-3 text-center card-header"><i class="fas fa-question"></i>
                         Survey Questions
+                        <i class="fas fa-question"></i>
                     </div>
                     <div class="card-body">
-                        <h1 class="display-6">About You</h1>
-                        <form>
+                            <p>Answer all questions truthfully for most accurate buddy matching.</p>
+                            <p>Rating scale: <strong> 1 - Strongly Disagree </strong> and <strong>5 - Strongly Agree</strong></p>
+                        <form name="surveyForm">
                             <div class="form-group">
-                                <label class="font-weight-bold" for="name">Name (Required)</label>
-                                <input type="text" class="form-control" id="name" placeholder="Enter your name">
+                                <label for="name">Name (Required)</label>
+                                <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
                             </div>
 
                             <div class="form-group">
-                                <label class="font-weight-bold" for="photo">Photo Image (Required)</label>
-                                <input type="text" class="form-control" id="photo" placeholder="Provide a Link to Your Image">
+                                <label for="photo">Photo Image (Required)</label>
+                                <input type="text" class="form-control" id="photo" placeholder="Provide a Link to Your Image" required>
                             </div>
                             <hr>
 
                             <div class="form-group">
-                                    <label class="font-weight-bold" for="Question1">Question 1</label>
-                                    <p>You are easy-going most of the time.</p>
-                                    <select class="form-control" id="Question1">
+                                    <label for="Question1">Question 1</label>
+                                    <p>I am very easy-going. It takes a lot to ruffle my feathers.</p>
+                                    <select class="form-control" id="Question1" required>
                                         <option>1</option>
                                         <option>2</option>
                                         <option>3</option>
@@ -45,9 +50,9 @@
                                     </select>
                                      <br>
 
-                                    <label class="font-weight-bold" for="Question1">Question 2</label>
-                                    <p>You are ambitious in setting career goals.</p>
-                                    <select class="form-control" id="Question2">
+                                    <label for="Question1">Question 2</label>
+                                    <p>Cats are the best creatures who have ever roamed this Earth.#catsrule</p>
+                                    <select class="form-control" id="Question2" requried>
                                         <option>1</option>
                                         <option>2</option>
                                         <option>3</option>
@@ -56,9 +61,9 @@
                                     </select>
                                      <br>
 
-                                    <label class="font-weight-bold" for="Question1">Question 3</label>
-                                    <p>You are bossy.</p>
-                                    <select class="form-control" id="Question3">
+                                    <label for="Question1">Question 3</label>
+                                    <p>My friends think I'm bossy. What's wrong with wanting to be in charge?</p>
+                                    <select class="form-control" id="Question3" requried>
                                         <option>1</option>
                                         <option>2</option>
                                         <option>3</option>
@@ -67,9 +72,9 @@
                                     </select>
                                     <br>
 
-                                    <label class="font-weight-bold" for="Question1">Question 4</label>
-                                    <p>You are known for being creative.</p>
-                                    <select class="form-control" id="Question4">
+                                    <label for="Question1">Question 4</label>
+                                    <p>My ideal weekend is eating pizza while binge-watching "Stranger Things" on Netflix.</p>
+                                    <select class="form-control" id="Question4" required>
                                         <option>1</option>
                                         <option>2</option>
                                         <option>3</option>
@@ -78,9 +83,9 @@
                                     </select>
                                      <br>
 
-                                    <label class="font-weight-bold" for="Question1">Question 5</label>
-                                    <p> You sympathize with others' feelings</p>
-                                    <select class="form-control" id="Question5">
+                                    <label for="Question1">Question 5</label>
+                                    <p> I have to change channels every time I see an ASPCA commercial on TV, especially if it features neglected cats (see question 2 for explanation).</p>
+                                    <select class="form-control" id="Question5" required>
                                         <option>1</option>
                                         <option>2</option>
                                         <option>3</option>
@@ -89,9 +94,9 @@
                                     </select>
                                      <br>
 
-                                    <label class="font-weight-bold" for="Question1">Question 6</label>
-                                    <p>You have difficulty understanding abstract ideas.</p>
-                                    <select class="form-control" id="Question6">
+                                    <label for="Question1">Question 6</label>
+                                    <p>I'm always the first person to hit the dance floor to show off my signature moves.</p>
+                                    <select class="form-control" id="Question6" required>
                                         <option>1</option>
                                         <option>2</option>
                                         <option>3</option>
@@ -100,9 +105,9 @@
                                     </select>
                                      <br>
 
-                                    <label class="font-weight-bold" for="Question1">Question 7</label>
-                                    <p>You don't mind being the center of attention.</p>
-                                    <select class="form-control" id="Question7">
+                                    <label for="Question1">Question 7</label>
+                                    <p>My parents are my best friends. I feel sorry for you if yours aren't.</p>
+                                    <select class="form-control" id="Question7" required>
                                         <option>1</option>
                                         <option>2</option>
                                         <option>3</option>
@@ -111,9 +116,9 @@
                                     </select>
                                      <br>
 
-                                    <label class="font-weight-bold" for="Question1">Question 8</label>
-                                    <p>Placeholder text</p>
-                                    <select class="form-control" id="Question8">
+                                    <label for="Question1">Question 8</label>
+                                    <p>I'm known for being spontaneous and adventurous. My suitcase is always packed just in case.</p>
+                                    <select class="form-control" id="Question8" required>
                                         <option>1</option>
                                         <option>2</option>
                                         <option>3</option>
@@ -122,9 +127,9 @@
                                     </select>
                                      <br>
 
-                                    <label class="font-weight-bold" for="Question1">Question 9</label>
-                                    <p>You get upset easily.</p>
-                                    <select class="form-control" id="Question9">
+                                    <label for="Question1">Question 9</label>
+                                    <p>I try to be present in every moment. Why dwell on the past?</p>
+                                    <select class="form-control" id="Question9" required>
                                         <option>1</option>
                                         <option>2</option>
                                         <option>3</option>
@@ -133,9 +138,9 @@
                                     </select>
                                      <br>
 
-                                    <label class="font-weight-bold" for="Question1">Question 10</label>
-                                    <p>You like to make people feel at ease.t</p>
-                                    <select class="form-control" id="Question10">
+                                    <label for="Question1">Question 10</label>
+                                    <p>I try not to judge people as you never know what they've been through. </p>
+                                    <select class="form-control" id="Question10" required>
                                         <option>1</option>
                                         <option>2</option>
                                         <option>3</option>
@@ -145,7 +150,7 @@
                                      <br>
                             </div>
                             
-                            <button id="submitButton" type="submit" class="btn btn-primary">Submit</button>
+                            <button id="submitButton" type="submit" class="btn btn-primary btn-lg">Submit</button>
                         </form>
                      </div>
                 </div>
@@ -184,11 +189,19 @@
         /* Adjust feedback icon position */
         right: -15px;
     }
+    label {
+        color: #007bff;  
+        font-size: 150%;
+        };
+
+    #survey_header{
+        color: #007bff;
+    }
 </style>
     <script>
         $("#submitButton").on("click", function(event){
             event.preventDefault();
-
+           
             var friend = {
                 name:$("#name").val().trim(),
                 photo:$("#photo").val().trim(),
@@ -217,21 +230,7 @@
                     img.appendTo("#friendPicture");
                                
                     $('#myModal').modal({ show: true})
-                    // window.location.reload();
             });
-                    //  window.location.reload();
-                    // $("#name").val("");
-                    // $("#photo").val("");
-                    // $("#Question1").val("");
-                    // $("#Question2").val("");
-                    // $("#Question3").val("");
-                    // $("#Question4").val("");
-                    // $("#Question5").val("");
-                    // $("#Question6").val("");
-                    // $("#Question7").val("");
-                    // $("#Question8").val("");
-                    // $("#Question9").val("");
-                    // $("#Question10").val("");
         });
        
     $('#modalClose').on('click', function (e) {
