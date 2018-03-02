@@ -6,7 +6,7 @@ var app = express();
 
 var port = process.env.PORT || 8080;
 
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(path.join(__dirname,'./app/public')));
 // app.use('/images', express["static"](path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
