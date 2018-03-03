@@ -29,20 +29,20 @@ module.exports = function(app){
 
             //declare variable that adds up all numbers in an array to produce the final indicating the difference in scores
             var totalDifference = currentScore.reduce((a, b) => a + b, 0);
-            // console.log(totalDifference);
           
             friendsArray[i].comparisonScore = totalDifference;
-            // console.log(totalDifference);
         }
 
         //sort the array in ascending order with the lowest difference score being at index [0]
         friendsArray.sort(function(a, b) {
             return a.comparisonScore - b.comparisonScore;
         });
+        console.log(friendsArray);
         //send the array item at index[0] to the modal 
         res.send([friendsArray[0].name,friendsArray[0].photo]);
         //push new friend to the array of friends
         friendsArray.push(newFriend);
+        
             
         //********************** Utility Functions*********************** */
         // reset comparison scores after sorting

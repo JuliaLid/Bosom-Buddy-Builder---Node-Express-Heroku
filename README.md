@@ -13,6 +13,7 @@ You will use Express to handle routing. Make sure you deploy your app to Heroku 
 * JavaScript 
 * jQuery
 * Node.js
+* [jQuery Chosen](https://harvesthq.github.io/chosen/) for form validation
 * [Font Awesome](https://fontawesome.com/)
 * [Bootstrap 4.0](http://getbootstrap.com/docs/4.0/getting-started/introduction/)
 * Node.js
@@ -20,9 +21,13 @@ You will use Express to handle routing. Make sure you deploy your app to Heroku 
     * [`express`](https://www.npmjs.com/package/mysql) to handle routing.
     * [`body-parser`](https://www.npmjs.com/package/body-parser): body parsing middleware.
     * [Heroku](https://www.heroku.com/) to deploy the app.
-   
-  
-## Comments
 
+## Comments
+* Learned about building a full-stack (sans database)web web app and deploying it to Heroku
+* Used a form validation plug-in
+
+## Challenges
+* Figuring out how to compare values in multiple arrays.
 
 ## Feedback and Questions
+* I'd like to know if there is a more efficient way of figuring out the compatibility score.
