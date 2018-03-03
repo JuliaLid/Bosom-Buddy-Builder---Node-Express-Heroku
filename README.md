@@ -20,7 +20,7 @@ You will use Express to handle routing. Make sure you deploy your app to Heroku 
 * npm packages
     * [`express`](https://www.npmjs.com/package/mysql) to handle routing.
     * [`body-parser`](https://www.npmjs.com/package/body-parser): body parsing middleware.
-    * [Heroku](https://www.heroku.com/) to deploy the app.
+* [Heroku](https://www.heroku.com/) to deploy the app.
 
 ## Comments
 * Learned about building a full-stack (sans database)web web app and deploying it to Heroku
